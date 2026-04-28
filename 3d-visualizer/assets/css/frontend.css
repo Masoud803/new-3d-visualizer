@@ -1,0 +1,20 @@
+.tdv-container {
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.tdv-model-switcher .tdv-switch-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.tdv-model-switcher .tdv-switch-btn:hover {
+    background: #f0f0f0;
+}

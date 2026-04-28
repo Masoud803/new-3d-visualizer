@@ -1,0 +1,22 @@
+.tdv-admin-wrap {
+    padding: 10px;
+}
+.tdv-model-item {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.tdv-model-item h4 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.tdv-model-item p {
+    margin-bottom: 10px;
+}
+.tdv-model-item input[type="text"] {
+    width: 100%;
+    margin-top: 5px;
+}
