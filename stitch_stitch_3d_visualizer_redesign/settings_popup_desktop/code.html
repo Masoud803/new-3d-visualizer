@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina 3D - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#0b1326",
+                      "on-secondary-fixed-variant": "#454747",
+                      "inverse-surface": "#dae2fd",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-error-container": "#ffdad6",
+                      "outline": "#8b919b",
+                      "surface": "#0b1326",
+                      "outline-variant": "#414750",
+                      "on-secondary": "#2f3131",
+                      "tertiary-fixed-dim": "#ffb86e",
+                      "surface-container": "#171f33",
+                      "on-tertiary": "#492900",
+                      "on-background": "#dae2fd",
+                      "surface-variant": "#2d3449",
+                      "on-primary-container": "#e9f1ff",
+                      "surface-container-high": "#222a3d",
+                      "secondary-fixed": "#e2e2e2",
+                      "tertiary-fixed": "#ffdcbd",
+                      "surface-container-lowest": "#060e20",
+                      "secondary": "#c6c6c7",
+                      "inverse-primary": "#0062a1",
+                      "surface-container-low": "#131b2e",
+                      "on-tertiary-fixed": "#2c1600",
+                      "on-surface-variant": "#c1c7d2",
+                      "surface-container-highest": "#2d3449",
+                      "on-primary-fixed-variant": "#00497a",
+                      "error-container": "#93000a",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "surface-tint": "#9ccaff",
+                      "primary-fixed-dim": "#9ccaff",
+                      "on-surface": "#dae2fd",
+                      "background": "#0b1326",
+                      "secondary-container": "#454747",
+                      "on-primary": "#003256",
+                      "tertiary-container": "#9f5e00",
+                      "surface-bright": "#31394d",
+                      "on-tertiary-container": "#ffeee0",
+                      "on-secondary-container": "#b4b5b5",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#693c00",
+                      "inverse-on-surface": "#283044",
+                      "primary-fixed": "#d0e4ff",
+                      "error": "#ffb4ab",
+                      "primary-container": "#2271b1",
+                      "primary": "#9ccaff",
+                      "on-primary-fixed": "#001d35",
+                      "tertiary": "#ffb86e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "toolbar-height": "40px",
+                      "panel-width": "280px",
+                      "container-padding": "16px",
+                      "element-gap": "8px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "value-mono": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "header-caps": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "value-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "header-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom styles for specific elements not easily handled by pure Tailwind utilities */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-modal {
+            background: rgba(23, 31, 51, 0.85); /* Slightly less transparent for top modal */
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hud-divider {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Range slider styling to match minimal theme */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: #9ccaff; /* primary */
+            cursor: pointer;
+            margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+            box-shadow: 0 0 0 2px #0b1326; /* surface border */
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: #414750; /* outline-variant */
+            border-radius: 1px;
+        }
+        
+        /* Custom select styling */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23c1c7d2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat, repeat;
+            background-position: right .7em top 50%, 0 0;
+            background-size: .65em auto, 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen w-screen overflow-hidden selection:bg-primary-container selection:text-on-primary-container font-body-md antialiased">
+<!-- Background 3D Viewport Placeholder -->
+<div class="absolute inset-0 z-0 bg-surface-dim">
+<img alt="3D render of a futuristic motorcycle engine part, sleek grey metal, dramatic studio lighting against a dark background" class="w-full h-full object-cover opacity-60" data-alt="3D render of a futuristic motorcycle engine part, sleek grey metal, dramatic studio lighting against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKk4sDdkYqS3M8t3V4_hm6JPzfBtukIiLhYjOkhx1ziQ7VWnyFIXMeH6D9Ppw7-JwtMlaEePgA0ZB0S69_d7gifpJn6xvGrwLj4c1kMw5ztXlHkasiYG4nrmgznE6mvgc5HwEluMW42S_Bxeo22nSkXIx_Mf3mkAH8Ls_r_ZSQBLP-OwMfCQnMfmpmBBZSwszaSBW3GfVckKPSloItaYe0Klkqt_grrP85pwiwlc0k23dOayTWqoB6jj8NmDcHcp4SA5B8g8QKhg12"/>
+</div>
+<!-- Navigation Shell Suppressed as per Task instructions for a Settings Overlay -->
+<!-- Blur Overlay for Modal Context -->
+<div class="absolute inset-0 z-40 bg-surface-lowest/40 backdrop-blur-sm flex items-center justify-center p-4">
+<!-- Settings Modal -->
+<div class="glass-modal rounded-xl w-full max-w-[360px] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Header -->
+<div class="flex justify-between items-center px-4 py-3 hud-divider">
+<h2 class="font-header-caps text-header-caps text-on-surface">Settings</h2>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-6">
+<!-- Section 1: SHARE -->
+<div class="flex flex-col gap-2">
+<span class="font-header-caps text-header-caps text-outline">SHARE</span>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span> <!-- Placeholder for FB -->
+</button>
+<button class="w-10 h-10 rounded-full bg-slate-700/30 text-white hover:bg-slate-700/50 border border-white/10 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span> <!-- Placeholder for X -->
+</button>
+<button class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 hover:bg-green-500/30 border border-green-500/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat</span> <!-- Placeholder for WA -->
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+</div>
+</div>
+<!-- Section 2: EMAIL CONFIGURATION -->
+<div class="flex flex-col gap-3">
+<span class="font-header-caps text-header-caps text-outline">EMAIL CONFIGURATION</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Send your current product configuration via email</p>
+<button class="w-full py-2.5 bg-primary/80 hover:bg-primary text-on-primary font-label-sm text-label-sm rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">send</span>
+                        Email My Configuration
+                    </button>
+</div>
+<!-- Section 3: LIGHTING -->
+<div class="flex flex-col gap-4">
+<span class="font-header-caps text-header-caps text-outline">LIGHTING</span>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface">Brightness</span>
+<span class="font-value-mono text-value-mono text-primary">1.1x</span>
+</div>
+<input class="w-full" max="2" min="0" step="0.1" type="range" value="1.1"/>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="font-label-sm text-label-sm text-on-surface">Shadows &amp; Light</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Section 4: QUALITY -->
+<div class="flex flex-col gap-2">
+<span class="font-header-caps text-header-caps text-outline">QUALITY</span>
+<select class="w-full bg-surface-container-high border border-outline-variant text-on-surface font-label-sm text-label-sm rounded-lg px-3 py-2 focus:outline-none focus:border-primary transition-colors">
+<option selected="" value="high">High Quality</option>
+<option value="medium">Medium</option>
+<option value="low">Low</option>
+</select>
+</div>
+<!-- Section 5: COMPARISON -->
+<div class="pt-2 border-t border-white/5">
+<button class="w-full py-2.5 bg-tertiary/20 hover:bg-tertiary/30 text-tertiary border border-tertiary/30 font-label-sm text-label-sm rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">compare</span>
+                        Enable Comparison
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

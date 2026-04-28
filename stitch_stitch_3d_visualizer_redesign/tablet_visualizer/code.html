@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3D Visualizer - Tablet View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#31394d",
+                    "outline-variant": "#414750",
+                    "secondary-container": "#454747",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-surface": "#dae2fd",
+                    "inverse-primary": "#0062a1",
+                    "on-tertiary-fixed": "#2c1600",
+                    "inverse-surface": "#dae2fd",
+                    "primary-fixed-dim": "#9ccaff",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#131b2e",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#001d35",
+                    "surface-variant": "#2d3449",
+                    "surface-container": "#171f33",
+                    "surface-tint": "#9ccaff",
+                    "primary-fixed": "#d0e4ff",
+                    "surface-container-high": "#222a3d",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-tertiary": "#492900",
+                    "on-primary-container": "#e9f1ff",
+                    "tertiary-container": "#9f5e00",
+                    "primary": "#9ccaff",
+                    "tertiary-fixed-dim": "#ffb86e",
+                    "surface-container-highest": "#2d3449",
+                    "on-tertiary-fixed-variant": "#693c00",
+                    "on-secondary": "#2f3131",
+                    "on-primary-fixed-variant": "#00497a",
+                    "primary-container": "#2271b1",
+                    "surface-container-lowest": "#060e20",
+                    "on-tertiary-container": "#ffeee0",
+                    "outline": "#8b919b",
+                    "on-primary": "#003256",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-surface-variant": "#c1c7d2",
+                    "inverse-on-surface": "#283044",
+                    "on-background": "#dae2fd",
+                    "secondary": "#c6c6c7",
+                    "surface-dim": "#0b1326",
+                    "tertiary": "#ffb86e",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdcbd",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface": "#0b1326",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "background": "#0b1326"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "container-padding": "16px",
+                    "toolbar-height": "40px",
+                    "element-gap": "8px",
+                    "panel-width": "280px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "value-mono": ["Inter"],
+                    "header-caps": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "value-mono": ["12px", { "lineHeight": "14px", "fontWeight": "400" }],
+                    "header-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                    "label-sm": ["12px", { "lineHeight": "14px", "fontWeight": "500" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling on main canvas */
+        }
+        
+        /* 3D Canvas Placeholder */
+        .canvas-bg {
+            background-image: radial-gradient(circle at center, #1e293b 0%, #0b1326 100%);
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .glass-panel {
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md h-screen w-screen relative">
+<!-- 3D Viewport Background (Simulated) -->
+<div class="canvas-bg flex items-center justify-center">
+<!-- Placeholder for 3D Model -->
+<img alt="3D Product Render" class="w-3/4 max-w-2xl h-auto object-contain opacity-80 mix-blend-screen drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" data-alt="high quality studio shot of a modern premium wireless headphone resting on a minimal dark gray pedestal, dramatic rim lighting, soft reflections, sharp focus, 3d render style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0kx6q4TJCy6Z6OZnVQAwqNMyDuDBVLqNtZ2Z0ULaGSd9_pdaRMKa2iDXex6NHZ3MCvNDHvde4okh0dDQHQWLneFYfAI1C4ZGxs4EuBebruOXyAKvgBfNCkIJ8MbEk9OHNsM4CRoY-v8Kr_QLZSYdu5CBQxZMATfdR5iQZ76KFbWvnKMnKxvDYifnHgJtS0_D9FwQZFIACnwXVbD6yt1WnjCo0tvwP08X7wPPJyvXppS5WZAB1cuqsbG80ox8tQbRWRdmO6n_zfOy4"/>
+</div>
+<!-- TopAppBar (Floating) -->
+<header class="fixed top-0 right-0 p-4 z-50 flex items-center gap-2">
+<div class="bg-slate-900/60 backdrop-blur-xl rounded-full mt-4 mr-4 float-right border border-white/10 shadow-[0px_10px_30px_rgba(0,0,0,0.3)] flex items-center p-2 gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-white/10 transition-colors hover:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">save</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-white/10 transition-colors hover:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">restart_alt</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-white/10 transition-colors hover:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">autorenew</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-white/10 transition-colors hover:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Drawer Overlay for Tablet) -->
+<!-- Assuming "Materials" is active -->
+<nav class="fixed left-4 top-1/2 -translate-y-1/2 w-[280px] rounded-3xl border border-white/10 h-[819px] bg-slate-950/70 backdrop-blur-2xl shadow-2xl shadow-black/50 flex flex-col p-4 z-40 overflow-hidden">
+<!-- Drawer Header -->
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/5">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-outline/30">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">headphones</span>
+</div>
+<div>
+<h2 class="text-xl font-black text-white leading-tight">Customize</h2>
+<p class="font-inter text-xs text-outline-variant font-medium">Variant Configurator</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-2 flex-grow">
+<!-- Active Item: Materials -->
+<button class="flex items-center gap-3 p-3 w-full text-left bg-blue-600/80 text-white rounded-xl shadow-lg shadow-blue-900/20 transition-all hover:translate-x-1 duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">palette</span>
+<span class="font-inter text-sm font-medium">Materials</span>
+</button>
+<!-- Inactive Item: Finishes -->
+<button class="flex items-center gap-3 p-3 w-full text-left text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all hover:translate-x-1 duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">texture</span>
+<span class="font-inter text-sm font-medium">Finishes</span>
+</button>
+<!-- Inactive Item: Lighting -->
+<button class="flex items-center gap-3 p-3 w-full text-left text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all hover:translate-x-1 duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">light_mode</span>
+<span class="font-inter text-sm font-medium">Lighting</span>
+</button>
+<!-- Inactive Item: Dimensions -->
+<button class="flex items-center gap-3 p-3 w-full text-left text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all hover:translate-x-1 duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">straighten</span>
+<span class="font-inter text-sm font-medium">Dimensions</span>
+</button>
+</div>
+<!-- Contextual Content Area (e.g., Material Swatches) -->
+<div class="mt-auto pt-4 border-t border-white/5">
+<p class="font-header-caps text-header-caps text-outline mb-3 uppercase">Leather Colors</p>
+<div class="flex gap-3 flex-wrap">
+<button aria-label="Midnight Black" class="w-8 h-8 rounded-full bg-[#1a1c1d] border-2 border-white shadow-lg drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"></button>
+<button aria-label="Cognac Brown" class="w-8 h-8 rounded-full bg-[#8c5a3d] border border-white/20 hover:border-white/50 transition-colors"></button>
+<button aria-label="Platinum Silver" class="w-8 h-8 rounded-full bg-[#cfd8dc] border border-white/20 hover:border-white/50 transition-colors"></button>
+<button aria-label="Deep Purple" class="w-8 h-8 rounded-full bg-[#9c27b0] border border-white/20 hover:border-white/50 transition-colors"></button>
+</div>
+</div>
+</nav>
+<!-- BottomNavBar (Environment Switcher) -->
+<!-- Assuming "Studio" is active based on generic context -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center gap-6 px-6 py-2 z-50 mb-6 rounded-full border border-white/10 bg-slate-900/40 backdrop-blur-lg shadow-xl w-[90%] md:w-auto overflow-x-auto no-scrollbar">
+<!-- Active Tab: Studio -->
+<button class="flex flex-col items-center gap-1 bg-white/20 text-white rounded-full p-2 ring-2 ring-white/30 scale-90 transition-transform flex-shrink-0 min-w-[64px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Studio</span>
+</button>
+<!-- Inactive Tab: HDR-Outdoor -->
+<button class="flex flex-col items-center gap-1 text-slate-300 opacity-60 p-2 hover:opacity-100 scale-110 transition-transform flex-shrink-0 min-w-[64px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">forest</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">HDR-Outdoor</span>
+</button>
+<!-- Inactive Tab: Midnight -->
+<button class="flex flex-col items-center gap-1 text-slate-300 opacity-60 p-2 hover:opacity-100 scale-110 transition-transform flex-shrink-0 min-w-[64px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dark_mode</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Midnight</span>
+</button>
+<!-- Inactive Tab: Showcase -->
+<button class="flex flex-col items-center gap-1 text-slate-300 opacity-60 p-2 hover:opacity-100 scale-110 transition-transform flex-shrink-0 min-w-[64px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">view_in_ar</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Showcase</span>
+</button>
+<!-- Inactive Tab: Reset -->
+<button class="flex flex-col items-center gap-1 text-slate-300 opacity-60 p-2 hover:opacity-100 scale-110 transition-transform flex-shrink-0 min-w-[64px] border-l border-white/10 pl-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">refresh</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Reset</span>
+</button>
+</nav>
+<!-- Floating Action Button (Optional contextual action, e.g., AR View) -->
+<button class="fixed bottom-[100px] right-6 z-40 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-[0px_10px_30px_rgba(34,113,177,0.4)] flex items-center justify-center hover:scale-105 transition-transform backdrop-blur-md border border-white/20">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+</button>
+</body></html>

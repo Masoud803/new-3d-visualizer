@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparison View - Lumina 3D</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#0b1326",
+                      "primary": "#9ccaff",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "secondary": "#c6c6c7",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#131b2e",
+                      "surface-tint": "#9ccaff",
+                      "surface-container-high": "#222a3d",
+                      "primary-fixed-dim": "#9ccaff",
+                      "on-tertiary-fixed": "#2c1600",
+                      "tertiary-fixed-dim": "#ffb86e",
+                      "surface": "#0b1326",
+                      "on-error": "#690005",
+                      "tertiary-container": "#9f5e00",
+                      "on-primary-container": "#e9f1ff",
+                      "surface-container": "#171f33",
+                      "secondary-container": "#454747",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-background": "#dae2fd",
+                      "primary-container": "#2271b1",
+                      "tertiary": "#ffb86e",
+                      "surface-container-highest": "#2d3449",
+                      "error-container": "#93000a",
+                      "surface-variant": "#2d3449",
+                      "surface-dim": "#0b1326",
+                      "primary-fixed": "#d0e4ff",
+                      "surface-bright": "#31394d",
+                      "on-secondary-fixed-variant": "#454747",
+                      "inverse-surface": "#dae2fd",
+                      "on-surface-variant": "#c1c7d2",
+                      "on-tertiary": "#492900",
+                      "error": "#ffb4ab",
+                      "on-primary": "#003256",
+                      "outline-variant": "#414750",
+                      "on-primary-fixed-variant": "#00497a",
+                      "on-primary-fixed": "#001d35",
+                      "on-surface": "#dae2fd",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-secondary": "#2f3131",
+                      "inverse-primary": "#0062a1",
+                      "inverse-on-surface": "#283044",
+                      "tertiary-fixed": "#ffdcbd",
+                      "on-secondary-container": "#b4b5b5",
+                      "outline": "#8b919b",
+                      "surface-container-lowest": "#060e20",
+                      "on-tertiary-fixed-variant": "#693c00",
+                      "on-tertiary-container": "#ffeee0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "panel-width": "280px",
+                      "element-gap": "8px",
+                      "toolbar-height": "40px",
+                      "unit": "4px",
+                      "container-padding": "16px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "header-caps": [
+                              "Inter"
+                      ],
+                      "value-mono": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "header-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "value-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface h-screen w-screen overflow-hidden font-body-md text-body-md antialiased relative selection:bg-primary-container selection:text-on-primary-container">
+<!-- 3D Canvas Background Simulation -->
+<div class="absolute inset-0 z-0 bg-surface-container-lowest" data-alt="High-end 3D rendering of an industrial object in a studio environment, slightly out of focus to simulate depth of field, with cool, dramatic lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnF5stAGlxtFSnYPzMiPsQCsA9tGi7XAOg27wT-oz-vkVqIQFUA2cyyy1hgY6_ExMAtvM0CQ0ichgNnx2fZ8Z9pyzqwaeM6e2U5t_UFKzbCM-YbdocJ-l5nwW5GGdNx24UxUhSgsNOMarodyRyRbcWIpx8H9ou7Qa_0C1N4hyOvKw38f7-SFlAQxSKcPfJyfL_NXtJht_94GfYrwzi5Y0uDyNPExeAVYn108SdVt5Urlfnp_FPsnsv53URTtRXgNKPsznbQi6ra5Ys'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-background/40 backdrop-blur-[2px]"></div>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-6 z-50 bg-slate-900/60 backdrop-blur-[20px] font-inter text-sm tracking-wide text-slate-200 docked full-width top-0 border-b border-white/10 shadow-none border-b border-white/10">
+<div class="text-lg font-black tracking-tighter text-slate-50">LUMINA 3D</div>
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="text-slate-400 hover:text-slate-200 pb-4 mt-4 hover:bg-white/5 transition-colors duration-200 h-full flex items-center" href="#">Viewer</a>
+<a class="text-blue-400 font-semibold border-b-2 border-blue-400 pb-4 mt-4 h-full flex items-center" href="#">Compare</a>
+<a class="text-slate-400 hover:text-slate-200 pb-4 mt-4 hover:bg-white/5 transition-colors duration-200 h-full flex items-center" href="#">Studio</a>
+<a class="text-slate-400 hover:text-slate-200 pb-4 mt-4 hover:bg-white/5 transition-colors duration-200 h-full flex items-center" href="#">Snapshot</a>
+</nav>
+<div class="flex items-center gap-element-gap">
+<button class="w-toolbar-height h-toolbar-height flex items-center justify-center rounded-full text-slate-400 hover:bg-white/5 transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+<button class="w-toolbar-height h-toolbar-height flex items-center justify-center rounded-full text-slate-400 hover:bg-white/5 transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<button class="w-toolbar-height h-toolbar-height flex items-center justify-center rounded-full text-slate-400 hover:bg-white/5 transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNav (Contextual) -->
+<nav class="hidden md:flex flex-col gap-2 p-4 fixed left-4 top-20 bottom-4 w-[280px] rounded-lg border border-white/10 bg-slate-900/60 backdrop-blur-[20px] font-inter text-xs uppercase font-bold tracking-widest text-slate-400 divide-y divide-white/5 shadow-2xl shadow-black/40 z-40">
+<div class="pb-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-high border border-white/10 flex items-center justify-center overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover" data-alt="Small square thumbnail of the 3D model project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_f2-3CS6KzhEPSsyULHQKj-73Q35HDU3rvUTN-aLJt9vDvmJ71aN_xPqTmhSMilURnh9N-GJr_bRypx7yCYpIJIEYoR5AcLf-eIUyWIsiVedS7FnzJtNBdaPnAblk_wUkKrAlS_ZNoihFQbq7Cy7ZFqQvGLgiL4FRK4W2OOEgWJf9zSvZN4CcOgMHMdrDY9JytHeHWLrLnX9lIEwt5a4hUf3c0bxVPRc2kz8d0YVvcxvQsL71YhQlOVOtAsT2jQYOE4ncm7_ooM3r"/>
+</div>
+<div>
+<h2 class="text-slate-200 font-bold tracking-normal capitalize text-sm">Project Config</h2>
+<p class="text-slate-500 font-normal tracking-normal capitalize text-xs">V-01 Industrial</p>
+</div>
+</div>
+<div class="pt-2 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[18px]">view_in_ar</span>
+<span>Models</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-blue-500/20 text-blue-400 border-r-2 border-blue-500 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">texture</span>
+<span>Materials</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+<span>Environment</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+<span>Lighting</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-white/5 hover:text-slate-100 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[18px]">layers</span>
+<span>Layers</span>
+</a>
+</div>
+</nav>
+<!-- Main Comparison Overlay -->
+<main class="absolute inset-0 z-30 flex items-center justify-center pointer-events-none mt-16">
+<!-- Comparison Card (Glassmorphism) -->
+<div class="pointer-events-auto bg-surface-container-high/60 backdrop-blur-[20px] border border-white/10 rounded-xl p-6 shadow-[0px_20px_50px_rgba(0,0,0,0.5)] w-[480px] max-w-[90vw] flex flex-col gap-6 transform translate-y-12">
+<div class="text-center space-y-1">
+<h2 class="font-header-caps text-header-caps text-on-surface uppercase text-center">Material Comparison</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Reviewing changes to main casing</p>
+</div>
+<!-- Split Layout for Swatches -->
+<div class="flex gap-4">
+<!-- Left Swatch: Original -->
+<div class="flex-1 flex flex-col gap-3">
+<div class="font-header-caps text-header-caps text-on-surface-variant text-center">Original</div>
+<div class="aspect-[4/3] rounded-lg bg-surface border border-white/10 shadow-inner overflow-hidden relative group">
+<!-- Simulating a rendered material swatch -->
+<div class="absolute inset-0 bg-background" style="background: radial-gradient(circle at 30% 30%, #1a2744 0%, #0b1326 100%);"></div>
+</div>
+<div class="text-center">
+<div class="font-label-sm text-label-sm text-on-surface">Midnight Blue</div>
+<div class="font-value-mono text-value-mono text-outline">#0B1326</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-px bg-white/10 self-stretch my-8 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface-container border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">swap_horiz</span>
+</div>
+</div>
+<!-- Right Swatch: Selected -->
+<div class="flex-1 flex flex-col gap-3">
+<div class="font-header-caps text-header-caps text-primary text-center">Selected</div>
+<div class="aspect-[4/3] rounded-lg bg-primary-container border-2 border-primary shadow-[0_0_15px_rgba(34,113,177,0.3)] overflow-hidden relative group">
+<!-- Simulating a rendered material swatch -->
+<div class="absolute inset-0" style="background: radial-gradient(circle at 30% 30%, #3b8cd0 0%, #2271b1 100%);"></div>
+</div>
+<div class="text-center">
+<div class="font-label-sm text-label-sm text-on-surface">Primary Blue</div>
+<div class="font-value-mono text-value-mono text-primary">#2271B1</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-4 border-t border-white/10 flex justify-center">
+<button class="px-6 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-on-surface font-label-sm text-label-sm transition-colors duration-200 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">close</span>
+                    Close Comparison
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Nav fallback) -->
+<nav class="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 h-14 bg-slate-950/80 backdrop-blur-[24px] font-inter text-[10px] font-medium uppercase tracking-tighter rounded-full border border-white/20 px-6 py-2 shadow-[0px_20px_50px_rgba(0,0,0,0.5)] border border-white/10">
+<a class="text-slate-400 px-4 py-1.5 flex flex-col items-center gap-1 hover:bg-white/10 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span>Original</span>
+</a>
+<a class="bg-blue-500 text-white rounded-full px-4 py-1.5 flex items-center gap-2 hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">splitscreen</span>
+<span>Compare</span>
+</a>
+<a class="text-slate-400 px-4 py-1.5 flex flex-col items-center gap-1 hover:bg-white/10 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Selected</span>
+</a>
+</nav>
+</body></html>

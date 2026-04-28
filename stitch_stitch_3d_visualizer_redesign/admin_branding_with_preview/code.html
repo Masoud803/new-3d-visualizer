@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Branding &amp; Settings - 3D Visualizer Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #004ac6; /* theme primary */
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #004ac6; /* theme primary */
+        }
+        .toggle-checkbox:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #b4c5ff; /* theme inverse-primary */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffede6",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#515f74",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface-variant": "#434655",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "background": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-background": "#191c1e",
+                        "surface-tint": "#0053db",
+                        "on-primary-fixed": "#00174b",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d5e3fc",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "primary": "#004ac6",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#b4c5ff",
+                        "outline": "#737686",
+                        "tertiary": "#943700",
+                        "on-secondary-container": "#57657a",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-container": "#bc4800",
+                        "inverse-surface": "#2d3133",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2563eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background min-h-screen text-on-background font-body-base antialiased">
+<!-- JSON Component: SideNavBar -->
+<nav class="hidden md:flex bg-slate-950/80 backdrop-blur-2xl text-blue-500 font-inter text-xs font-semibold uppercase tracking-widest text-xl font-black text-white italic fixed left-0 top-0 h-full w-72 border-r border-white/5 none flex-col gap-2 p-6 z-50">
+<div class="mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-primary">admin_panel_settings</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black text-white italic" style="text-transform: none;">Visualizer</span>
+<span class="text-xs text-slate-400 normal-case tracking-normal">v2.4.0</span>
+</div>
+</div>
+<ul class="flex flex-col gap-2 w-full">
+<li class="w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li class="w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined text-lg">view_in_ar</span>
+<span>Models</span>
+</a>
+</li>
+<li class="w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined text-lg">landscape</span>
+<span>Environments</span>
+</a>
+</li>
+<li class="w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined text-lg">tune</span>
+<span>Customization</span>
+</a>
+</li>
+<li class="w-full">
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-500/10 text-blue-500 rounded-lg hover:bg-white/5 transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">palette</span>
+<span>Branding</span>
+</a>
+</li>
+<li class="w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span>Settings</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- JSON Component: TopAppBar -->
+<header class="hidden md:flex bg-slate-900/60 backdrop-blur-xl text-blue-500 font-inter text-sm font-medium tracking-tight text-lg font-bold text-white tracking-tight fixed top-0 right-0 left-72 h-16 border-b border-white/10 shadow-lg shadow-black/20 items-center justify-between px-8 z-40">
+<div class="flex items-center gap-4 text-lg font-bold text-white tracking-tight">
+            3D Visualizer Pro
+        </div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-white/5 hover:text-white transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-white/5 hover:text-white transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="h-6 w-px bg-white/10"></div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white font-inter text-sm font-medium tracking-tight hover:bg-white/10 transition-all duration-200 active:scale-95">
+                    Preview
+                </button>
+<button class="px-4 py-2 rounded-lg bg-blue-600 text-white font-inter text-sm font-medium tracking-tight hover:bg-blue-500 transition-all duration-200 active:scale-95 shadow-md shadow-blue-900/20">
+                    Save Changes
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-72 pt-24 p-container-padding max-w-[1440px] mx-auto min-h-screen">
+<div class="mb-xl">
+<h1 class="font-h1 text-h1 text-on-background mb-unit">Branding &amp; Settings</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Configure the visual identity and frontend features of your 3D viewer.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Branding Assets -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Card: Brand Assets -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col relative overflow-hidden">
+<div class="border-b border-outline-variant pb-md mb-md flex justify-between items-center">
+<h2 class="font-h2 text-h2 text-on-surface">Brand Assets</h2>
+<span class="material-symbols-outlined text-outline">image</span>
+</div>
+<div class="flex flex-col gap-md">
+<label class="font-label-md text-label-md text-on-surface">Company Logo</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-unit">Upload a high-resolution logo to display in the viewer interface. PNG or SVG recommended.</p>
+<div class="mt-sm flex justify-center rounded-lg border border-dashed border-outline-variant px-6 py-10 bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-outline mb-sm group-hover:text-primary transition-colors">cloud_upload</span>
+<div class="mt-4 flex text-sm leading-6 text-on-surface-variant justify-center">
+<label class="relative cursor-pointer rounded-md font-semibold text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 hover:text-primary-container" for="file-upload">
+<span>Upload a file</span>
+<input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+</label>
+<p class="pl-1">or drag and drop</p>
+</div>
+<p class="text-xs leading-5 text-on-surface-variant">PNG, JPG, SVG up to 5MB</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card: Theme Colors -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col">
+<div class="border-b border-outline-variant pb-md mb-md flex justify-between items-center">
+<h2 class="font-h2 text-h2 text-on-surface">Theme Colors</h2>
+<span class="material-symbols-outlined text-outline">colors</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-lg">Define the primary CSS variables injected into the frontend viewer.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Primary Color -->
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface">Primary Color</label>
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 rounded border border-outline-variant overflow-hidden shrink-0 shadow-sm cursor-pointer relative">
+<input class="absolute inset-[-10px] w-[200%] h-[200%] cursor-pointer opacity-0" type="color" value="#004ac6"/>
+<div class="w-full h-full bg-[#004ac6]"></div>
+</div>
+<input class="h-10 w-full rounded-md border border-outline-variant bg-surface-container-lowest px-3 font-body-base text-body-base text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none uppercase" type="text" value="#004ac6"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Used for main buttons, active states, and highlights.</p>
+</div>
+<!-- Secondary Color -->
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface">Secondary Color</label>
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 rounded border border-outline-variant overflow-hidden shrink-0 shadow-sm cursor-pointer relative">
+<input class="absolute inset-[-10px] w-[200%] h-[200%] cursor-pointer opacity-0" type="color" value="#515f74"/>
+<div class="w-full h-full bg-[#515f74]"></div>
+</div>
+<input class="h-10 w-full rounded-md border border-outline-variant bg-surface-container-lowest px-3 font-body-base text-body-base text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none uppercase" type="text" value="#515f74"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Used for secondary actions and subtle UI elements.</p>
+</div>
+</div>
+</div>
+<!-- Card: Live Preview -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col">
+<div class="border-b border-outline-variant pb-md mb-md flex justify-between items-center">
+<h2 class="font-h2 text-h2 text-on-surface">Live Preview</h2>
+<span class="material-symbols-outlined text-outline">preview</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-lg">See how your changes will appear in the frontend visualizer widget.</p>
+<div class="w-full aspect-video bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden relative flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-outline-variant absolute z-0">view_in_ar</span>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-highest to-transparent opacity-50 z-0"></div>
+<div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur rounded p-2 flex items-center gap-2 shadow-sm z-10 border border-outline-variant">
+<div class="w-6 h-6 bg-primary rounded flex items-center justify-center text-[10px] text-white font-bold">L</div>
+<span class="text-xs font-medium text-on-surface">Company Name</span>
+</div>
+<div class="absolute bottom-4 right-4 flex gap-2 z-10">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-sm cursor-pointer hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">360</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface text-on-surface flex items-center justify-center shadow-sm border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Features & Social -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Card: Frontend Features -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col">
+<div class="border-b border-outline-variant pb-md mb-md flex justify-between items-center">
+<h2 class="font-h2 text-h2 text-on-surface">Features</h2>
+<span class="material-symbols-outlined text-outline">toggle_on</span>
+</div>
+<div class="flex flex-col gap-md">
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Show Help Button</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Display navigation instructions</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out border-outline-variant z-10 top-0 left-0" id="toggle1" name="toggle" style="transform: translateX(100%); border-color: #004ac6;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-200 ease-in-out" for="toggle1" style="background-color: #004ac6;"></label>
+</div>
+</div>
+<div class="w-full h-px bg-surface-variant"></div>
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Show Screenshot</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Allow users to capture images</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-outline-variant appearance-none cursor-pointer transition-transform duration-200 ease-in-out z-10 top-0 left-0" id="toggle2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-200 ease-in-out" for="toggle2"></label>
+</div>
+</div>
+<div class="w-full h-px bg-surface-variant"></div>
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Show Comparison</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Enable A/B model comparison</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out border-outline-variant z-10 top-0 left-0" id="toggle3" name="toggle" style="transform: translateX(100%); border-color: #004ac6;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-200 ease-in-out" for="toggle3" style="background-color: #004ac6;"></label>
+</div>
+</div>
+<div class="w-full h-px bg-surface-variant"></div>
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Show Social Icons</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Display sharing options</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out border-outline-variant z-10 top-0 left-0" id="toggle4" name="toggle" style="transform: translateX(100%); border-color: #004ac6;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-200 ease-in-out" for="toggle4" style="background-color: #004ac6;"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- Card: Social Platforms -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col">
+<div class="border-b border-outline-variant pb-md mb-md flex justify-between items-center">
+<h2 class="font-h2 text-h2 text-on-surface">Social Platforms</h2>
+<span class="material-symbols-outlined text-outline">share</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Select which platforms appear in the sharing menu.</p>
+<div class="flex flex-col gap-sm">
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-base text-body-base text-on-surface">Facebook</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-base text-body-base text-on-surface">Twitter (X)</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-base text-body-base text-on-surface">LinkedIn</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-base text-body-base text-on-surface">Email</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

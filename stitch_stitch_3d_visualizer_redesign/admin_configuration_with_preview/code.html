@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customization Configuration - 3D Visualizer Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#ffede6",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#515f74",
+                      "secondary-fixed": "#d5e3fc",
+                      "surface-container-low": "#f2f4f6",
+                      "on-surface-variant": "#434655",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#360f00",
+                      "background": "#f7f9fb",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "surface-container-high": "#e6e8ea",
+                      "on-background": "#191c1e",
+                      "surface-tint": "#0053db",
+                      "on-primary-fixed": "#00174b",
+                      "surface-variant": "#e0e3e5",
+                      "on-secondary-fixed-variant": "#3a485b",
+                      "surface-dim": "#d8dadc",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e0e3e5",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#d5e3fc",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "primary": "#004ac6",
+                      "primary-fixed": "#dbe1ff",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "surface-bright": "#f7f9fb",
+                      "inverse-on-surface": "#eff1f3",
+                      "outline-variant": "#c3c6d7",
+                      "surface-container": "#eceef0",
+                      "inverse-primary": "#b4c5ff",
+                      "outline": "#737686",
+                      "tertiary": "#943700",
+                      "on-secondary-container": "#57657a",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#eeefff",
+                      "tertiary-container": "#bc4800",
+                      "inverse-surface": "#2d3133",
+                      "on-surface": "#191c1e",
+                      "surface": "#f7f9fb",
+                      "primary-container": "#2563eb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-padding": "24px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "unit": "4px",
+                      "lg": "24px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-base": ["Inter"],
+                      "h2": ["Inter"],
+                      "h3": ["Inter"],
+                      "h1": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "h2": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h3": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-base text-body-base text-on-background min-h-screen">
+<!-- SideNavBar (Generated from JSON) -->
+<nav class="fixed left-0 top-0 h-full w-72 border-r border-white/10 flex flex-col gap-2 p-6 z-50 bg-slate-950/80 backdrop-blur-2xl">
+<div class="flex items-center gap-4 mb-8 px-2">
+<div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden border border-white/10">
+<span class="material-symbols-outlined text-slate-300" data-icon="person">person</span>
+</div>
+<div>
+<div class="text-xl font-black text-white italic tracking-tight">Visualizer</div>
+<div class="text-slate-400 font-label-sm text-label-sm">v2.4.0</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-xs font-semibold uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="view_in_ar">view_in_ar</span>
+<span class="font-inter text-xs font-semibold uppercase tracking-widest">Models</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="landscape">landscape</span>
+<span class="font-inter text-xs font-semibold uppercase tracking-widest">Environments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-500/10 text-blue-500 rounded-lg transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="tune" style="font-variation-settings: 'FILL' 1;">tune</span>
+<span class="font-inter text-xs font-semibold uppercase tracking-widest">Customization</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="palette">palette</span>
+<span class="font-inter text-xs font-semibold uppercase tracking-widest">Branding</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="settings">settings</span>
+<span class="font-inter text-xs font-semibold uppercase tracking-widest">Settings</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar (Generated from JSON) -->
+<header class="fixed top-0 right-0 left-72 h-16 border-b border-white/10 flex items-center justify-between px-8 z-40 bg-slate-900/60 backdrop-blur-xl shadow-lg shadow-black/20">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-white tracking-tight">3D Visualizer Pro</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="text-slate-400 hover:text-white transition-all duration-200 active:scale-95 duration-100 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-400 hover:text-white transition-all duration-200 active:scale-95 duration-100 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-6 w-px bg-white/10"></div>
+<div class="flex gap-3">
+<button class="font-inter text-sm font-medium tracking-tight text-white bg-blue-500/20 px-4 py-1.5 rounded-lg transition-all duration-200 active:scale-95 border border-blue-500/50 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    Live Preview Active
+                </button>
+<button class="font-inter text-sm font-medium tracking-tight bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded-lg transition-all duration-200 active:scale-95 border border-blue-500/50 shadow-md shadow-blue-900/20">
+                    Save Changes
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-72 mt-16 p-xl max-w-[1440px] mx-auto">
+<!-- Page Header -->
+<div class="flex items-end justify-between mb-lg border-b border-surface-variant pb-md">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-1">Configuration</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage customization options, groups, and node mappings for the visualizer.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant text-on-surface px-4 py-2 rounded-lg hover:bg-surface-container-low transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                    Filter
+                </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                    New Group
+                </button>
+</div>
+</div>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-lg items-start">
+<!-- Main Content Area: Groups List -->
+<div class="xl:col-span-8 flex flex-col gap-md">
+<!-- Group Card 1: Frame Colors (Swatch) -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm overflow-hidden group">
+<!-- Header -->
+<div class="flex items-center p-md bg-surface border-b border-surface-variant gap-4">
+<div class="cursor-grab text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="flex-1 flex gap-4 items-center">
+<input class="bg-transparent border-none p-0 font-h3 text-h3 text-on-surface focus:ring-0 flex-1 min-w-0" placeholder="Group Name" type="text" value="Frame Colors"/>
+<div class="flex items-center gap-2 bg-surface-container border border-outline-variant rounded-lg px-3 py-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="palette">palette</span>
+<select class="bg-transparent border-none text-sm font-label-md text-label-md text-on-surface py-1 pl-0 pr-6 focus:ring-0 cursor-pointer">
+<option selected="">Color Swatches</option>
+<option>Toggle Visibility</option>
+<option>Dropdown Select</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" title="Duplicate">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-error-container text-outline hover:text-error transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Body (Swatches Bento Grid) -->
+<div class="p-lg">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-md">
+<!-- Swatch Item -->
+<div class="relative flex flex-col p-3 rounded-lg border border-outline-variant bg-surface hover:border-primary/50 transition-colors group/swatch">
+<div class="flex items-start justify-between mb-3">
+<div class="w-10 h-10 rounded-full border border-outline-variant shadow-inner" style="background-color: #1e293b;"></div>
+<button class="text-outline hover:text-error opacity-0 group-hover/swatch:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="close">close</span>
+</button>
+</div>
+<input class="w-full bg-transparent border-none p-0 font-label-sm text-label-sm text-on-surface mb-1 focus:ring-0 placeholder:text-outline-variant" placeholder="Label" type="text" value="Matte Black"/>
+<div class="flex items-center gap-1">
+<span class="text-outline-variant font-mono text-[10px]">#</span>
+<input class="w-full bg-transparent border-none p-0 font-mono text-[11px] text-on-surface-variant focus:ring-0 uppercase placeholder:text-outline-variant" placeholder="HEX" type="text" value="1e293b"/>
+</div>
+</div>
+<!-- Swatch Item -->
+<div class="relative flex flex-col p-3 rounded-lg border border-outline-variant bg-surface hover:border-primary/50 transition-colors group/swatch">
+<div class="flex items-start justify-between mb-3">
+<div class="w-10 h-10 rounded-full border border-outline-variant shadow-inner" style="background-color: #ef4444;"></div>
+<button class="text-outline hover:text-error opacity-0 group-hover/swatch:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="close">close</span>
+</button>
+</div>
+<input class="w-full bg-transparent border-none p-0 font-label-sm text-label-sm text-on-surface mb-1 focus:ring-0 placeholder:text-outline-variant" placeholder="Label" type="text" value="Racing Red"/>
+<div class="flex items-center gap-1">
+<span class="text-outline-variant font-mono text-[10px]">#</span>
+<input class="w-full bg-transparent border-none p-0 font-mono text-[11px] text-on-surface-variant focus:ring-0 uppercase placeholder:text-outline-variant" placeholder="HEX" type="text" value="ef4444"/>
+</div>
+</div>
+<!-- Swatch Item -->
+<div class="relative flex flex-col p-3 rounded-lg border border-outline-variant bg-surface hover:border-primary/50 transition-colors group/swatch">
+<div class="flex items-start justify-between mb-3">
+<div class="w-10 h-10 rounded-full border border-outline-variant shadow-inner" style="background-color: #f8fafc;"></div>
+<button class="text-outline hover:text-error opacity-0 group-hover/swatch:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="close">close</span>
+</button>
+</div>
+<input class="w-full bg-transparent border-none p-0 font-label-sm text-label-sm text-on-surface mb-1 focus:ring-0 placeholder:text-outline-variant" placeholder="Label" type="text" value="Pearl White"/>
+<div class="flex items-center gap-1">
+<span class="text-outline-variant font-mono text-[10px]">#</span>
+<input class="w-full bg-transparent border-none p-0 font-mono text-[11px] text-on-surface-variant focus:ring-0 uppercase placeholder:text-outline-variant" placeholder="HEX" type="text" value="f8fafc"/>
+</div>
+</div>
+<!-- Add New Swatch Button -->
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-dashed border-outline-variant bg-transparent hover:bg-surface-container-low hover:border-outline transition-colors gap-2 min-h-[110px]">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Add Swatch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Group Card 2: Accessories (Toggle) -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm overflow-hidden group">
+<!-- Header -->
+<div class="flex items-center p-md bg-surface border-b border-surface-variant gap-4">
+<div class="cursor-grab text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="flex-1 flex gap-4 items-center">
+<input class="bg-transparent border-none p-0 font-h3 text-h3 text-on-surface focus:ring-0 flex-1 min-w-0" placeholder="Group Name" type="text" value="Optional Accessories"/>
+<div class="flex items-center gap-2 bg-surface-container border border-outline-variant rounded-lg px-3 py-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="toggle_on">toggle_on</span>
+<select class="bg-transparent border-none text-sm font-label-md text-label-md text-on-surface py-1 pl-0 pr-6 focus:ring-0 cursor-pointer">
+<option>Color Swatches</option>
+<option selected="">Toggle Visibility</option>
+<option>Dropdown Select</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" title="Duplicate">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-error-container text-outline hover:text-error transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Body (Toggle List) -->
+<div class="p-0">
+<!-- Table-like Header -->
+<div class="grid grid-cols-12 gap-4 px-lg py-sm bg-surface-container-low border-b border-surface-variant">
+<div class="col-span-1"></div>
+<div class="col-span-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Option Label</div>
+<div class="col-span-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Target Node (3D)</div>
+<div class="col-span-2 font-label-sm text-label-sm text-on-surface-variant uppercase text-center">Default State</div>
+<div class="col-span-1"></div>
+</div>
+<!-- Row Item -->
+<div class="grid grid-cols-12 gap-4 items-center px-lg py-3 border-b border-surface-variant hover:bg-surface group/row">
+<div class="col-span-1 flex justify-center cursor-grab text-outline-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="col-span-4">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-3 py-1.5 font-body-base text-body-base text-on-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none" type="text" value="Front Basket"/>
+</div>
+<div class="col-span-4">
+<div class="flex items-center gap-2 bg-surface-container-low rounded px-3 py-1.5 border border-transparent focus-within:border-primary focus-within:bg-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="hub">hub</span>
+<input class="w-full bg-transparent border-none p-0 font-mono text-[13px] text-secondary focus:ring-0" type="text" value="node_acc_basket_01"/>
+</div>
+</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-10 h-6 bg-primary rounded-full relative flex items-center px-1 cursor-pointer transition-colors">
+<div class="w-4 h-4 bg-white rounded-full translate-x-4 transition-transform shadow-sm"></div>
+</button>
+</div>
+<div class="col-span-1 flex justify-end opacity-0 group-hover/row:opacity-100 transition-opacity">
+<button class="text-outline hover:text-error p-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Row Item -->
+<div class="grid grid-cols-12 gap-4 items-center px-lg py-3 hover:bg-surface group/row">
+<div class="col-span-1 flex justify-center cursor-grab text-outline-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="col-span-4">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-3 py-1.5 font-body-base text-body-base text-on-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none" type="text" value="Rear Mudguard"/>
+</div>
+<div class="col-span-4">
+<div class="flex items-center gap-2 bg-surface-container-low rounded px-3 py-1.5 border border-transparent focus-within:border-primary focus-within:bg-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="hub">hub</span>
+<input class="w-full bg-transparent border-none p-0 font-mono text-[13px] text-secondary focus:ring-0" type="text" value="node_acc_mudguard_r"/>
+</div>
+</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-10 h-6 bg-surface-container-highest rounded-full relative flex items-center px-1 cursor-pointer transition-colors border border-outline-variant">
+<div class="w-4 h-4 bg-outline rounded-full translate-x-0 transition-transform shadow-sm"></div>
+</button>
+</div>
+<div class="col-span-1 flex justify-end opacity-0 group-hover/row:opacity-100 transition-opacity">
+<button class="text-outline hover:text-error p-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Row Button Area -->
+<div class="bg-surface p-sm border-t border-surface-variant flex justify-center">
+<button class="flex items-center gap-2 text-primary hover:text-primary-container font-label-md text-label-md px-4 py-2 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                            Add Option
+                        </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Settings / Preview Info (Bento layout) -->
+<div class="xl:col-span-4 flex flex-col gap-md sticky top-24">
+<!-- Status Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-md shadow-sm">
+<h3 class="font-h3 text-h3 text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="info">info</span>
+                        Configuration Status
+                    </h3>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center py-2 border-b border-surface-variant">
+<span class="font-body-base text-body-base text-on-surface-variant">Total Groups</span>
+<span class="font-label-md text-label-md text-on-surface bg-surface-container px-2 py-0.5 rounded">2</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-variant">
+<span class="font-body-base text-body-base text-on-surface-variant">Active Nodes</span>
+<span class="font-label-md text-label-md text-on-surface bg-surface-container px-2 py-0.5 rounded">5</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="font-body-base text-body-base text-on-surface-variant">Model Sync</span>
+<span class="font-label-sm text-label-sm text-primary-container bg-primary/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                Synced
+                            </span>
+</div>
+</div>
+</div>
+<!-- Hierarchy Preview Placeholder -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden shadow-sm flex flex-col h-[500px]">
+<div class="p-md bg-surface border-b border-surface-variant flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">Live Preview</h3>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="open_in_full">open_in_full</span>
+</button>
+</div>
+<div class="flex-1 relative overflow-hidden bg-white">
+<img alt="3D Model Preview" class="w-full h-full object-cover mix-blend-multiply opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJPEyOYJovWQhlnTsrUc_1hu0x5ip-ukQPi8iy_r4_Gofb62x1eIZzXjWAkb011hG2uCbA0Xv2BtMSYaWcedaKcT6J6olE-yHrXRxZHZwvtppb2yLdi7PjlCJhAVPFVyLbGbZo-NdMhrOpHflv-7TjIaS5Dbv_mfvYQcJuYtFQFav5gC9zAFT1TJWZbcg6OVS_W1de2UbJ5Zv75pld3eD0JbA27xI_6SBmDwCZDUwc3s_SOmG4-gpBhMKa_BcCKC0h9y1oQPiHlVVS"/>
+<!-- Floating controls -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-surface-container-lowest/90 backdrop-blur border border-surface-variant rounded-full px-4 py-2 shadow-sm">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]" data-icon="rotate_left">rotate_left</span></button>
+<div class="w-px h-4 bg-outline-variant"></div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]" data-icon="zoom_in">zoom_in</span></button>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]" data-icon="zoom_out">zoom_out</span></button>
+<div class="w-px h-4 bg-outline-variant"></div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]" data-icon="360">360</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

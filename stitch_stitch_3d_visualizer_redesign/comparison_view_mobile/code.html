@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3D Product Visualizer - Material Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#b4b5b5",
+                    "tertiary": "#ffb86e",
+                    "surface-container-high": "#222a3d",
+                    "primary-fixed": "#d0e4ff",
+                    "tertiary-container": "#9f5e00",
+                    "secondary-container": "#454747",
+                    "primary": "#9ccaff",
+                    "on-secondary-fixed-variant": "#454747",
+                    "inverse-on-surface": "#283044",
+                    "surface-container-low": "#131b2e",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#9ccaff",
+                    "surface-container-highest": "#2d3449",
+                    "on-tertiary-container": "#ffeee0",
+                    "on-surface": "#dae2fd",
+                    "tertiary-fixed-dim": "#ffb86e",
+                    "surface-variant": "#2d3449",
+                    "tertiary-fixed": "#ffdcbd",
+                    "surface-container": "#171f33",
+                    "outline": "#8b919b",
+                    "surface": "#0b1326",
+                    "surface-bright": "#31394d",
+                    "on-error": "#690005",
+                    "on-tertiary": "#492900",
+                    "outline-variant": "#414750",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-primary-container": "#e9f1ff",
+                    "on-primary": "#003256",
+                    "surface-container-lowest": "#060e20",
+                    "on-secondary": "#2f3131",
+                    "inverse-primary": "#0062a1",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#2c1600",
+                    "on-primary-fixed-variant": "#00497a",
+                    "on-primary-fixed": "#001d35",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "background": "#0b1326",
+                    "primary-container": "#2271b1",
+                    "on-background": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary-fixed-variant": "#693c00",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed-dim": "#9ccaff",
+                    "surface-dim": "#0b1326",
+                    "on-surface-variant": "#c1c7d2",
+                    "secondary": "#c6c6c7",
+                    "on-secondary-fixed": "#1a1c1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "panel-width": "280px",
+                    "unit": "4px",
+                    "element-gap": "8px",
+                    "toolbar-height": "40px",
+                    "container-padding": "16px",
+                    "safe": "env(safe-area-inset-bottom, 1rem)"
+            },
+            "fontFamily": {
+                    "value-mono": ["Inter", "monospace"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "header-caps": ["Inter", "sans-serif"],
+                    "inter": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "value-mono": ["12px", { "lineHeight": "14px", "fontWeight": "400" }],
+                    "label-sm": ["12px", { "lineHeight": "14px", "fontWeight": "500" }],
+                    "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "header-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-inter antialiased min-h-screen flex flex-col overflow-hidden relative selection:bg-primary-container selection:text-on-primary-container">
+<!-- 3D Environment Background -->
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-700 opacity-90" data-alt="High-end 3D render of premium sleek wireless headphones floating in a dark minimalist studio setup with dramatic rim lighting and soft shadows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGOVllev-awWqbclRCMIoWpuNgrPOCq_wDIa3Etli3sOri5x4LJzaQBpO_eHCznWpw5MT9M8aiho9JiWw1-_5nvM8hVmmp8nWMZYoobfgs_VDpckh6WqnXv_oqz3h2-ENe-AEK8MKMBDXo6Xubh1IczWVpvOSA3ewRZ0R0gXBC78J6WsVtLtlX3U7uzM4Nhl-wDsVVYxSTmr1sJPMycIYo9Uf7_onY6Jeigt5rwQjJj4JpitnPmRftCSp8L5FqqUSOggISVmOUmtWu');">
+</div>
+<!-- Vignette / HUD Overlay -->
+<div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0b1326] via-[#0b1326]/30 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 z-0 bg-radial-gradient from-transparent to-[#0b1326]/60 pointer-events-none"></div>
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-2 bg-slate-900/60 backdrop-blur-md border border-white/10 shadow-xl font-inter antialiased tracking-tight text-sm text-slate-400">
+<button class="hover:bg-white/10 transition-colors active:scale-95 transition-transform duration-200 rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">menu</span>
+</button>
+<span class="text-base font-bold tracking-tighter text-slate-100">Visualizer</span>
+<button class="hover:bg-white/10 transition-colors active:scale-95 transition-transform duration-200 rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">settings</span>
+</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full h-full relative z-10 flex flex-col justify-end items-center pb-[120px] px-4 pointer-events-none">
+<!-- Floating Comparison Card -->
+<div class="pointer-events-auto w-full max-w-[340px] bg-surface-container-high/80 backdrop-blur-xl border border-white/10 shadow-2xl rounded-xl p-5 flex flex-col items-center ring-1 ring-black/20">
+<!-- Context Header -->
+<div class="w-full flex items-center justify-between mb-5 opacity-80">
+<span class="font-header-caps text-header-caps text-on-surface-variant uppercase">Material Comparison</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">swap_calls</span>
+</div>
+<!-- Swatches Area -->
+<div class="flex flex-row items-stretch justify-center gap-8 mb-6 w-full">
+<!-- Original Swatch -->
+<div class="flex flex-col items-center gap-3 w-[80px]">
+<div class="w-16 h-28 rounded-lg bg-[#0B1326] shadow-inner border border-white/10 relative overflow-hidden group transition-all duration-300">
+<div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/5 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Original</span>
+<span class="font-value-mono text-value-mono text-outline">#0B1326</span>
+</div>
+</div>
+<!-- Divider line -->
+<div class="w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent self-stretch my-2"></div>
+<!-- Selected Swatch -->
+<div class="flex flex-col items-center gap-3 w-[80px]">
+<div class="w-16 h-28 rounded-lg bg-[#2271B1] shadow-[0_0_20px_rgba(34,113,177,0.3)] border-2 border-primary-fixed relative overflow-hidden group transition-all duration-300 ring-2 ring-[#2271B1]/30 ring-offset-2 ring-offset-transparent">
+<div class="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-white/20 pointer-events-none"></div>
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20 mix-blend-overlay"></div>
+<!-- Active Indicator dot -->
+<div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="font-label-sm text-label-sm text-primary-fixed">Selected</span>
+<span class="font-value-mono text-value-mono text-primary-fixed">#2271B1</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-2.5 px-4 bg-white/5 hover:bg-white/10 active:bg-white/15 border border-white/5 hover:border-white/10 transition-all duration-200 rounded-lg flex justify-center items-center gap-2 group">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-on-surface transition-colors">close</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Close Comparison</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center items-center pb-safe pointer-events-none">
+<nav class="pointer-events-auto rounded-full mx-auto mb-8 w-max px-2 bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center gap-1 py-1 font-inter text-[10px] font-bold uppercase tracking-widest">
+<button aria-label="View in AR" class="flex items-center justify-center text-slate-400 p-3 hover:text-slate-100 active:scale-90 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined text-[20px]">view_in_ar</span>
+</button>
+<button aria-label="Compare Materials" class="flex items-center justify-center bg-blue-500/20 text-blue-400 rounded-full p-3 active:scale-90 transition-all duration-300 ring-1 ring-blue-500/30">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">compare</span>
+</button>
+<button aria-label="Color Palette" class="flex items-center justify-center text-slate-400 p-3 hover:text-slate-100 active:scale-90 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+</button>
+<button aria-label="Share" class="flex items-center justify-center text-slate-400 p-3 hover:text-slate-100 active:scale-90 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3D Visualizer Pro - Models &amp; Environments</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffede6",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#515f74",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface-variant": "#434655",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "background": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-background": "#191c1e",
+                        "surface-tint": "#0053db",
+                        "on-primary-fixed": "#00174b",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d5e3fc",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "primary": "#004ac6",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#b4c5ff",
+                        "outline": "#737686",
+                        "tertiary": "#943700",
+                        "on-secondary-container": "#57657a",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-container": "#bc4800",
+                        "inverse-surface": "#2d3133",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2563eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-base antialiased min-h-screen overflow-x-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col gap-2 p-6 z-50 fixed left-0 top-0 h-full w-72 border-r border-white/5 bg-slate-950/80 backdrop-blur-2xl text-blue-500 font-inter text-xs font-semibold uppercase tracking-widest shadow-none transition-all duration-300">
+<div class="mb-8 px-4 flex flex-col gap-1">
+<div class="text-xl font-black text-white italic tracking-tight">Visualizer</div>
+<div class="text-slate-400 font-body-sm normal-case">v2.4.0</div>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-95 duration-100">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-500 hover:translate-x-1 duration-200 group relative" href="#">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-blue-500 rounded-r-full"></div>
+<span class="material-symbols-outlined text-[20px] group-active:scale-95 duration-100" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+<span>Models</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-95 duration-100">landscape</span>
+<span>Environments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-95 duration-100">tune</span>
+<span>Customization</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-95 duration-100">palette</span>
+<span>Branding</span>
+</a>
+</div>
+<div class="mt-auto pt-4 border-t border-white/10">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-active:scale-95 duration-100">settings</span>
+<span>Settings</span>
+</a>
+<div class="mt-4 px-4 flex items-center gap-3">
+<img alt="Admin User" class="w-8 h-8 rounded-full border border-white/20" data-alt="close up portrait of a professional male in his 30s with short hair, wearing a dark blue shirt, studio lighting, white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPwWzaDwjc6F9N1QhUCBIJtYeiR698_jJPslY7XDa5RM17msf-PowplhTJQkRgzVbnd_8dSf8aFKm6cQBE9zaIV4q921xehSGxFNE-tmUwFj7W7rkKPUCHPcKsBLVvAQPlmALYtJ7SIK9zr4kGZ0W7feF2QcFTf8drmt62HVQCtfP65yv3TPLpGhvSwz6rH79eN9WuNGZ8ctV6MTpUpTBrO4uNDRYkdJBGU5XLbq0N2c19_v9HUmsQsCGuRJ0Ua9S9QiSZFaiKFe4R"/>
+<div class="flex flex-col">
+<span class="text-white normal-case font-body-sm font-medium">Admin User</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-0 md:left-72 h-16 border-b border-white/10 bg-slate-900/60 backdrop-blur-xl shadow-lg shadow-black/20 flex items-center justify-between px-8 z-40">
+<div class="flex items-center gap-4">
+<div class="md:hidden text-lg font-bold text-white tracking-tight">3D Visualizer Pro</div>
+<h1 class="hidden md:block font-h2 text-h2 text-white">Models &amp; Environments</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:bg-white/5 hover:text-white transition-all duration-200 active:scale-95 p-2 rounded-full hidden md:flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="text-slate-400 hover:bg-white/5 hover:text-white transition-all duration-200 active:scale-95 p-2 rounded-full hidden md:flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+<button class="font-inter text-sm font-medium tracking-tight text-slate-300 hover:bg-white/5 hover:text-white transition-all duration-200 active:scale-95 px-4 py-2 rounded-DEFAULT border border-white/10">
+                Preview
+            </button>
+<button class="font-inter text-sm font-medium tracking-tight bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-all duration-200 active:scale-95 px-4 py-2 rounded-DEFAULT">
+                Save Changes
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[88px] pb-xl px-4 md:px-8 md:ml-72 max-w-[1440px] mx-auto min-h-screen flex flex-col gap-xl">
+<!-- 3D Models Section -->
+<section class="flex flex-col gap-lg">
+<div class="flex items-center justify-between border-b border-surface-variant pb-sm">
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">3D Models</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Manage GLB/GLTF assets for the visualizer.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-DEFAULT hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add New Model
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Model Card 1 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden flex flex-col hover:border-outline-variant transition-colors group">
+<div class="h-48 bg-surface-container-low relative overflow-hidden flex items-center justify-center p-4">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-variant/30 to-transparent"></div>
+<img alt="Modern Sofa" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="3d render of a modern minimalist gray sofa against a pure white background, studio lighting, high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD02RhuY36QEVs8QsryJuQD7ot_W1jw447Oa7YSu0BIZAZq15mogcYeBzIBg80MORB0bxy3k0F8txmayEh1Y7NTdz99WgymIpCsRQgv7CS9uPW0Sark_CFSivnbN6wgF925BqtTdTlZOzIzzH-JJ_T5OWzGS_s_wOvOm-AnnyPDrFgPk2FrLmShcFWFCjTzMOCwn4bfUEKEnLt2nKzrS05Hr-RdZ2SVWms9eInhRy1FeQrpkQ9wUB_lMp7X5sNVnQt4VmwCOmrmqCJS"/>
+<div class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded-full border border-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Active</span>
+</div>
+</div>
+<div class="p-md flex flex-col gap-sm flex-grow">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold">Modern Sofa Concept</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">modern_sofa_v2.glb</p>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm border-t border-surface-variant">
+<span class="font-body-sm text-body-sm text-outline">12.4 MB</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Model Card 2 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden flex flex-col hover:border-outline-variant transition-colors group">
+<div class="h-48 bg-surface-container-low relative overflow-hidden flex items-center justify-center p-4">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-variant/30 to-transparent"></div>
+<img alt="Wooden Chair" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="3d render of an elegant wooden dining chair with curved backrest on white background, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgvjSCY_jghvytSXsuzthJLwmka-6IWkmLQeTHnIt2RvHy75cOL3wp94qQYC5o2udMgYqKm2tn2KuXSPQ8ayB0sfINsMAjKSJLWNjHC71UqZFfYMIv3EOnEybesI7hDKXBdkOAVPtip6n_PLRP72Mpn0dnDBXWHbaT8sdYVgFKfEsGvn3AyZdNs1CAw5Z6tKhT0RCc-gYkzAxScgOunKUs2v7MY0LGs2ml3zCw2y0bn_hy0UqxNrKHAraPj7o6wwB5DnY6fhEKW6FF"/>
+<div class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded-full border border-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+<span class="font-label-sm text-label-sm text-outline">Inactive</span>
+</div>
+</div>
+<div class="p-md flex flex-col gap-sm flex-grow">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold">Oak Dining Chair</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">oak_chair_final.glb</p>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm border-t border-surface-variant">
+<span class="font-body-sm text-body-sm text-outline">4.1 MB</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Environments Section -->
+<section class="flex flex-col gap-lg">
+<div class="flex items-center justify-between border-b border-surface-variant pb-sm">
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">Environments</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Manage HDRI and background images.</p>
+</div>
+<button class="flex items-center gap-2 bg-surface-container-lowest text-on-surface border border-surface-variant font-label-md text-label-md px-md py-sm rounded-DEFAULT hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+                    Upload HDRI
+                </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<!-- Environment Card 1 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden group hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="h-32 relative overflow-hidden">
+<img alt="Modern Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="panoramic view of a bright modern living room with large windows, sunlight streaming in, minimalist decor, suitable for HDRI background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXI03KeysPRcT9TJ85QHiGr5E-kVmLW3DRMzybKyKrsZTngoV-_YHL3ECYMOeCvrC_nefKILE8lwSAPFehYeNrmBKW74oa-afUFG5pn5I_usX25BvD5hA8uPNRR_8gVtg1eL2rdE-xlbrxgJT9B3RganzEUjOjN_C4hwvKT8BOJ8ZIK9PGCFbZtHAgBDuwvW22sNfNfkrSWlfw6MkBU-ccXPefsimptzAf2ZSvAAUeLuE8l_ePCRUQ6q6RSOYwvMJSuWJGJF4P2Ccr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="font-label-md text-label-md text-white font-semibold">Studio Daylight</span>
+</div>
+</div>
+<div class="p-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">studio_day.hdr</span>
+<span class="font-label-sm text-label-sm text-outline mt-1">24.5 MB • 4K</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-outline hover:text-primary hover:bg-primary/5 rounded-DEFAULT transition-colors" title="Preview">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<label class="relative inline-flex items-center cursor-pointer ml-2">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Environment Upload Target -->
+<div class="border-2 border-dashed border-outline-variant bg-surface-container-low/50 rounded-xl flex flex-col items-center justify-center p-lg hover:border-primary/50 hover:bg-primary/5 transition-colors cursor-pointer group min-h-[200px]">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest border border-surface-variant flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">cloud_upload</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Drop HDRI file here</span>
+<span class="font-body-sm text-body-sm text-outline mt-1 text-center">Supports .hdr, .exr up to 50MB</span>
+</div>
+</div>
+</section>
+</main>
+</body></html>
